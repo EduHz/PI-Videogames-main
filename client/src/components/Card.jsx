@@ -18,7 +18,7 @@ export default function Card() {
             
           </div>
           <div className="color">
-            <h3>Genero :</h3>
+            <h3>genres :</h3>
             <span></span>
             <span></span>
             <span></span>
