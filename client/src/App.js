@@ -1,8 +1,29 @@
-import Card from "./components/Card";
+import Home from "./components/Home";
+import LandingPage from "./components/LandingPage";
+import { Route } from "react-router-dom";
+import DetailVideogame from "./components/DetailVideogame";
+import About from "./components/About";
+import CreateVideoGame from "./components/CreateVideoGame";
 
 function App() {
   return (
-   <Card />
+    <>
+      <Route exact path="/">
+        <LandingPage />
+      </Route>
+      <Route exact path="/home">
+        <Home />
+      </Route>
+      <Route exact path="/create">
+        <CreateVideoGame />
+      </Route>
+      <Route exact path="/about">
+        <About />
+      </Route>
+      <Route exact path="/videogame/:id">
+        <DetailVideogame />
+      </Route>
+    </>
   );
 }
 
