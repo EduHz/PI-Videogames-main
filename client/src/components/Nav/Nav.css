@@ -1,13 +1,20 @@
+
 ul {
+    margin-bottom: -4px;
     margin-right: -10px;
     margin-left: -10px;
-    padding-left: 75px;
+    padding-left: 30px;
     margin-top: -10px;
     list-style-type: none;
     overflow: hidden;
     background-color: #202020;
 
 }
+
+ul button{
+    position:relative;
+    left:8px;
+   }
 
 li {
     float: left;
@@ -23,5 +30,5 @@ li .links {
 
 
 li .links:hover {
-    background-color: #232323
+    background-color:#595740
 }

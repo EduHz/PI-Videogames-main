@@ -10,7 +10,10 @@ export default function Card() {
         />
         <div className="text">
           <h3>GTA V</h3>
-          <h4>action-adventure</h4>
+          <h4>
+            action-adventure <br />
+            ⭐4.5
+          </h4>
         </div>
       </div>
     </div>

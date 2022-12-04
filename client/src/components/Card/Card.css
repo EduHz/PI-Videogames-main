@@ -3,11 +3,12 @@
 
 
 #root .home .card {
-  height:240px;
+  
   display: inline-block;
-  transform: translatex(7px) translatey(10px);
+  transform: translatex(14px) translatey(10px);
   background-image: linear-gradient(153deg, #000000 0%, #434343 100%);
   background-blend-mode: normal;
+  height:260px;
 }
 
 
@@ -17,7 +18,6 @@
   width: 259px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-
 }
 
 .home .card h3{

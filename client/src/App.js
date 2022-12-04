@@ -1,9 +1,9 @@
 import Home from "./components/Home/Home.jsx"
-import LandingPage from "./components/LandingPage";
+import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import { Route } from "react-router-dom";
-import DetailVideogame from "./components/DetailVideogame";
 import About from "./components/About/About.jsx";
-import CreateVideoGame from "./components/CreateVideoGame/CreateVideoGame.jsx";
+import CreateVideogame from './components/CreateVideogame/CreateVideogame.jsx'
+import DetailVideogame from './components/DetailVideogame/DetailVideogame'
 
 function App() {
   return (
@@ -15,13 +15,13 @@ function App() {
         <Home />
       </Route>
       <Route exact path="/create">
-        <CreateVideoGame />
+      <CreateVideogame />
       </Route>
       <Route exact path="/about">
         <About />
       </Route>
       <Route exact path="/videogame/:id">
-        <DetailVideogame />
+      <DetailVideogame />
       </Route>
     </>
   );

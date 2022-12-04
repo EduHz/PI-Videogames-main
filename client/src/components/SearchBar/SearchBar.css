@@ -1,0 +1,16 @@
+.searchBar {
+    display: flex;
+    justify-content: flex-end;
+    margin: 12px;
+    padding-right: 30px;
+}
+
+.button-search {
+    background-color: #202020;
+    border: none;
+    cursor: pointer;
+}
+
+.button-search:active {
+    opacity: .5;
+}

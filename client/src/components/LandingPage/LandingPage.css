@@ -1,0 +1,15 @@
+.mylandingpage {
+    
+        margin: -10px;
+        background-image: url("../../assets/WallpaperDog-5446501.jpg");
+        width: 100mh;
+        height: 100vh;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        display: flex;
+      
+}
