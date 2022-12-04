@@ -3,18 +3,16 @@ import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
-    <nav className="navMenu">
-      <Link to="/home">
-        <span>HOME</span>
-      </Link>
-
-      <Link to="/create">
-        <span>CREATE</span>
-      </Link>
-
-      <Link to="/about">
-        <span>ABOUT</span>
-      </Link>
-    </nav>
+    <ul>
+      <li>
+        <Link to="/home" className="links">HOME</Link>
+      </li>
+      <li>
+        <Link to="/create" className="links">CREATE</Link>
+      </li>
+      <li>
+        <Link to="/about" className="links">ABOUT</Link>
+      </li>
+    </ul>
   );
 }

@@ -1,9 +1,9 @@
-import Home from "./components/Home";
+import Home from "./components/Home/Home.jsx"
 import LandingPage from "./components/LandingPage";
 import { Route } from "react-router-dom";
 import DetailVideogame from "./components/DetailVideogame";
-import About from "./components/About";
-import CreateVideoGame from "./components/CreateVideoGame";
+import About from "./components/About/About.jsx";
+import CreateVideoGame from "./components/CreateVideoGame/CreateVideoGame.jsx";
 
 function App() {
   return (
