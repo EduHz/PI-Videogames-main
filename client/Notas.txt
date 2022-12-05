@@ -30,3 +30,5 @@ Details {
 	-Posibilidad de seleccionar/agregar varias plataformas
 	-Botón/Opción para crear un nuevo videojuego
 </Form>
+
+//Eliminar : margin y padding 

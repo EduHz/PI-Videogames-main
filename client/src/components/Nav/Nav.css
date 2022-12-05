@@ -32,3 +32,13 @@ li .links {
 li .links:hover {
     background-color:#595740
 }
+
+
+@media screen and (max-width: 700px) {
+    
+    .div {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
