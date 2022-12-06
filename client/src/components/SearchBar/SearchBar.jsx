@@ -7,7 +7,7 @@ export default function SearchBar() {
   const options = [
     {value: '', text: '--Search Filters--'},
     {value: 'apple', text: '🍏 A to Z '},
-    {value: 'banana', text: '🧟‍♂️ Z to A '},
+    {value: 'banana', text: '🧟‍♂️  Z to A '},
     {value: 'kiwi', text: ' ⭐ Ranking'},
   ];
 
