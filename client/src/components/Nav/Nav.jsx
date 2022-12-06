@@ -1,7 +1,7 @@
 import "./Nav.css";
 import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
-import audio from '../../assets/gta-sa-menu.mp3'
+import audio from "../../assets/gta-sa-menu.mp3";
 
 export default function Nav() {
   let playAudio = () => {

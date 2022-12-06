@@ -16,11 +16,8 @@
 }
 
 
-@media screen and (max-width: 700px) {
-    
-    .div {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-}
+.filter{
+    position:relative;
+    top:1.5px;
+    right:20px;
+   }
