@@ -7,66 +7,62 @@
   transform: translatex(14px) translatey(10px);
   background-image: linear-gradient(153deg, #000000 0%, #434343 100%);
   background-blend-mode: normal;
-  height:260px;
+  height: 260px;
 }
 
-
 .card {
-  background-color: beige;
   margin: 10px;
   width: 259px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
 
-.home .card h3{
-  font-family:'Alumni Sans', sans-serif;
-  font-size:33px;
-  line-height:0px;
-  font-style:italic;
-  text-transform:capitalize;
-  text-decoration:overline;
-  color:#ededed;
-  text-align:center;
-  text-shadow:rgb(0, 0, 0) 0px 1px 1px, rgb(0, 0, 0) 0px -1px 1px, rgb(0, 0, 0) 1px 0px 1px, rgb(0, 0, 0) -1px 0px 1px;
-  white-space:normal;
-  direction:ltr;
- }
- 
+.home .card h3 {
+  font-family: 'Alumni Sans', sans-serif;
+  font-size: 33px;
+  line-height: 0px;
+  font-style: italic;
+  text-transform: capitalize;
+  text-decoration: overline;
+  color: #ededed;
+  text-align: center;
+  text-shadow: rgb(0, 0, 0) 0px 1px 1px, rgb(0, 0, 0) 0px -1px 1px, rgb(0, 0, 0) 1px 0px 1px, rgb(0, 0, 0) -1px 0px 1px;
+  white-space: normal;
+  direction: ltr;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
 
 
 /* Add rounded corners to the top left and the top right corner of the image */
 img {
-  width: 100%;
-  height: auto;
+  width: 258px;
+  height: 143px;
 }
 
-.home .card h4{
- 
-  text-transform:uppercase;
-  color:#a5a5a5;
-  text-align:center;
-  font-size:12px;
-  line-height:20.6px;
-  text-shadow:none;
-  letter-spacing:2.4px;
-  font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;
-  text-decoration:none;
-  font-weight:300;
-  white-space:nowrap;
-  position:relative;
-  top:-12px;
-  border-style:none;
-  border-color:#c8abab;
+.home .card h4 {
+  text-transform: uppercase;
+  color: #a5a5a5;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20.6px;
+  text-shadow: none;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  text-decoration: none;
+  font-weight: 300;
+  white-space: nowrap;
+  position: relative;
+  top: -12px;
+  border-style: none;
+  border-color: #c8abab;
   filter: brightness(1.34) contrast(1.07) saturate(0);
-  visibility:visible;
+  visibility: visible;
 }
 
 @media screen and (max-width: 700px) {
-    
   .div {
-      margin-left: auto;
-      margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
-
 }

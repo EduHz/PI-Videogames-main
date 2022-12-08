@@ -1,7 +1,7 @@
 import "./SearchBar.css";
 import { useState } from "react";
 
-export default function SearchBar() {
+export default function SearchBar({name}) {
   const [busqueda, setBusqueda] = useState("");
 
   const options = [

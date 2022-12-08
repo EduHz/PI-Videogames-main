@@ -1,0 +1,29 @@
+#tv {
+    position: relative;
+    width: 350px;
+    height: 550px;
+    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+    background-image: url('../../assets/pjs.jpg');
+    box-shadow: 20px 20px rgba(0, 0, 0, .15);
+    transition: all .4s ease;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    transform: translatex(505px) translatey(93px);
+    background-size:auto;
+    background-position-x:52%;
+    background-position-y:1%;
+    color:rgb(0, 0, 0);
+    background-clip:border-box;
+    background-color:#3a3b54;
+    background-attachment:fixed;
+    background-blend-mode:color-dodge;
+}
+
+
+
+#tv:hover {
+    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+    box-shadow: 10px 10px rgba(0, 0, 0, .25);
+}
