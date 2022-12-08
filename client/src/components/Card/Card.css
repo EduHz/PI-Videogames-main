@@ -17,6 +17,7 @@
   border-radius: 5px;
 }
 
+
 .home .card h3 {
   font-family: 'Alumni Sans', sans-serif;
   font-size: 33px;
@@ -65,4 +66,8 @@ img {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+[data-name-length="10"] .card__name {
+  font-size: 0.9rem
 }

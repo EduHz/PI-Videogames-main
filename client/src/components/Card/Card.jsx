@@ -5,7 +5,7 @@ export function Card({ games }) {
     <div className="container">
       {games.map((resultadoDeMapeo, index) => (
         <div className="card">
-          <img src={resultadoDeMapeo.background_image} />
+          <img src={resultadoDeMapeo.background_image} alt={resultadoDeMapeo.name} title={resultadoDeMapeo.name}/>
           <div className="text">
             <h3>{resultadoDeMapeo.name.substring(0,20)}</h3>
             <h4>
