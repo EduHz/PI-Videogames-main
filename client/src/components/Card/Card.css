@@ -37,10 +37,10 @@
 
 
 /* Add rounded corners to the top left and the top right corner of the image */
-img {
+.card-img {
   width: 258px;
   height: 143px;
-}
+} 
 
 .home .card h4 {
   text-transform: uppercase;
