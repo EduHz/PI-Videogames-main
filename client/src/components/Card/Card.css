@@ -12,10 +12,10 @@
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: .5rem;
-  position:relative;
-  bottom:-20px;
-  margin-right:17px;
+  grid-gap: 0.9rem;
+  margin-top: 10px;
+  align-items:center;
+  transform:translatex(3px)
 }
 
 .card {
@@ -23,11 +23,12 @@
   width: 259px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  margin: 10px;
+  /* transform:scale(0.90); */
+  position:relative;
+  margin-top: 3%
 }
 
-
-.home .card h3 {
+.card h3 {
   font-family: 'Alumni Sans', sans-serif;
   font-size: 33px;
   line-height: 0px;
@@ -70,13 +71,4 @@
   visibility: visible;
 }
 
-@media screen and (max-width: 700px) {
-  .div {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 
-[data-name-length="10"] .card__name {
-  font-size: 0.9rem
-}
