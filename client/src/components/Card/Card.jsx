@@ -1,6 +1,5 @@
 import "./Card.css";
 import { Link } from "react-router-dom";
-import DetailVideogame from '../DetailVideogame/DetailVideogame'
 
 export function Card({ games }) {
   return (
