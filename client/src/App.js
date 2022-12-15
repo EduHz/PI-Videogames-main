@@ -8,21 +8,11 @@ import DetailVideogame from "./components/DetailVideogame/DetailVideogame";
 function App() {
   return (
     <>
-      <Route exact path="/">
-        <LandingPage />
-      </Route>
-      <Route exact path="/home">
-        <Home />
-      </Route>
-      <Route exact path="/create">
-        <CreateVideogame />
-      </Route>
-      <Route exact path="/about">
-        <About />
-      </Route>
-      <Route exact path="/detail/:id">
-        <DetailVideogame />
-      </Route>
+      <Route exact path="/" component={LandingPage} />
+      <Route exact path="/home" component={Home} />
+      <Route exact path="/create" component={CreateVideogame} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/detail/:id" component={DetailVideogame}/>
     </>
   );
 }

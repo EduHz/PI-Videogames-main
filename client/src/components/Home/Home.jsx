@@ -51,7 +51,6 @@ export default function Home() {
           onPreviuos={onPreviuos}
           onNext={onNext}
         />
-        
       </div>
     </>
   );

@@ -2,14 +2,18 @@ import Nav from "../Nav/Nav";
 import "./DetailVideogame.css";
 import logo from "../../assets/pngegg.png";
 
-export default function DetailVideogame() {
+
+export default function DetailVideogame(props) {
+
+  console.log(props.match.params.id)
+
   return (
     <>
       <Nav />
       <div className="container-detail">
         <div className="card-detail">
           <img
-            classname="detail-img"
+            className="detail-img"
             src="https://images3.alphacoders.com/274/274397.jpg"
             alt="demo"
           />
