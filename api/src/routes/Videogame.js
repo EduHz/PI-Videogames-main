@@ -1,11 +1,11 @@
 const express = require("express");
-const getGenresApi = require("../controllers/getGenres.js");
+const getVideogames = require("../controllers/getVideogames")
 const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const genres = await getGenresApi();
-    res.status(200).send(genres);
+    const games = await getVideogames();
+    res.status(200).send(games);
   } catch (error) {
     res.status(400).json({ message: "error" });
   }

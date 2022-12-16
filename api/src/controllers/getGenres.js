@@ -4,7 +4,7 @@ const { API_KEY } = process.env;
 
 const URL = `https://api.rawg.io/api/genres?key=${API_KEY}`;
 
-const getGenresApi = async () => {
+const getGenres = async () => {
   //fetchGenre trae crudo
   const fetchGenre = await axios.get(URL);
   //Destructurar result
@@ -18,4 +18,4 @@ const getGenresApi = async () => {
   return [...allGenres];
 };
 
-module.exports = getGenresApi;
+module.exports = getGenres;
