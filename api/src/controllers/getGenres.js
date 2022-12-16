@@ -12,10 +12,10 @@ const getGenresApi = async () => {
   //Traemos los "name" que son los generos
   const allGenres = results?.map((res) => {
     return {
-      name: res.name
+      name: res.name,
     };
   });
-  return [...allGenres]
+  return [...allGenres];
 };
 
 module.exports = getGenresApi;
