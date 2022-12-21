@@ -8,12 +8,10 @@
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 0.9rem;
+  display: inline-block;
   margin-top: 10px;
-  align-items:center;
-  transform:translatex(3px)
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .card {
@@ -21,8 +19,6 @@
   width: 259px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  position:relative;
-  margin-top: 3%
 }
 
 .card h3 {
