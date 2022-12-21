@@ -13,16 +13,15 @@ export function Card({ games }) {
               alt={res.name}
               title={res.name}
             />
-            </Link>
-            <div className="text">
-              <h3>{res.name.slice(0, 20)}</h3>
-              <h4>
-                {/*De esta forma mostramos unicamente 3 generos*/}
-                {res.genres.map((x) => x.name + " ").slice(0, 2)}
-                <br />⭐{res.rating}
-              </h4>
+          </Link>
+          <div className="text">
+            <h3>{res.name.slice(0, 20)}</h3>
+            <h4>
+              {/*De esta forma mostramos unicamente 3 generos*/}
+              {res.genres.map((x) => x.name + " ").slice(0, 2)}
+              <br />⭐{res.rating}
+            </h4>
           </div>
-          {/*  */}
         </div>
       ))}
     </div>

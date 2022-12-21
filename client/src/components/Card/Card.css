@@ -3,10 +3,8 @@
 
 
 #root .home .card {
-
   background-image: linear-gradient(153deg, #000000 0%, #434343 100%);
   background-blend-mode: normal;
-
 }
 
 .container {
@@ -23,7 +21,6 @@
   width: 259px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  /* transform:scale(0.90); */
   position:relative;
   margin-top: 3%
 }
@@ -44,9 +41,6 @@
   text-overflow: ellipsis;
 }
 
-
-
-/* Add rounded corners to the top left and the top right corner of the image */
 .card-img {
   width: 258px;
   height: 143px;
