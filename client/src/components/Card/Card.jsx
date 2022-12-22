@@ -5,7 +5,7 @@ export function Card({ name, rating, image, genres, id }) {
   return (
     <div className="container">
       <div className="card" key={id}>
-        <Link to={`detail/${id}`}>
+        <Link to={`detail/${id}`}> 
           <img className="card-img" src={image} alt={name} title={name} />
         </Link>
         <div className="text">

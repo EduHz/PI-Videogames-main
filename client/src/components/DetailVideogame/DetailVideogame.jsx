@@ -4,16 +4,18 @@ import logo from "../../assets/pngegg.png";
 import { useSelector, useDispatch } from "react-redux";
 import { getVideogameById } from "../../../src/redux/actions";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-export default function DetailVideogame({ id }) {
+export default function DetailVideogame() {
   const dispatch = useDispatch();
   const game = useSelector((store) => store.searchVideogameById);
+  const idPage = useLocation().pathname.slice(8);
 
   useEffect(() => {
-    dispatch(getVideogameById(3328));
-  }, [dispatch]);
+    dispatch(getVideogameById(idPage));
+  }, []);
 
-  console.log(game, "soy el game");
+  console.log(game);
 
   return (
     <>
@@ -25,8 +27,7 @@ export default function DetailVideogame({ id }) {
             src="https://images3.alphacoders.com/274/274397.jpg"
             alt="demo"
           />
-
-          <h3>GTA IV</h3>
+          <h3>{game.name}</h3>
           <h4>
             Genres : Action - Adventure
             <br />
