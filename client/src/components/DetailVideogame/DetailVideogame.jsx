@@ -1,11 +1,19 @@
 import Nav from "../Nav/Nav";
 import "./DetailVideogame.css";
 import logo from "../../assets/pngegg.png";
+import { useSelector, useDispatch } from "react-redux";
+import { getVideogameById } from "../../../src/redux/actions";
+import { useEffect } from "react";
 
+export default function DetailVideogame({ id }) {
+  const dispatch = useDispatch();
+  const game = useSelector((store) => store.searchVideogameById);
 
-export default function DetailVideogame(props) {
+  useEffect(() => {
+    dispatch(getVideogameById(3328));
+  }, [dispatch]);
 
-  console.log(props.match.params.id)
+  console.log(game, "soy el game");
 
   return (
     <>
@@ -36,9 +44,9 @@ export default function DetailVideogame(props) {
             vehicles (including every transport you can operate) and the amount
             is rising with every update. <br />
             Simultaneous storytelling from three unique perspectives: <br />
-            Follow Michael, ex-criminal living his life of leisure away from
-            the past, Franklin, a kid that seeks the better future, and Trevor,
-            the exact past Michael is trying to run away from. <br />
+            Follow Michael, ex-criminal living his life of leisure away from the
+            past, Franklin, a kid that seeks the better future, and Trevor, the
+            exact past Michael is trying to run away from. <br />
             GTA Online will provide a lot of additional challenge even for the
             experienced players, coming fresh from the story mode. Now you will
             have other players around that can help you just as likely as ruin

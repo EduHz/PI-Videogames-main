@@ -25,7 +25,7 @@ export default function Home() {
         {estadoGames.length > 0 ? (
           estadoGames.map((game) => (
             <Card
-              
+              id={game.id}
               key={game.id}
               name={game.name}
               rating={game.rating}
