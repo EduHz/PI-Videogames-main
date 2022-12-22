@@ -4,7 +4,7 @@
 .card-detail {
   background-color: #5e5e5e;
   height: 520px;
-  width: 882px;
+  width: 800px;
   margin: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -15,7 +15,9 @@
 .container-detail {
   display: flex;
   flex-direction: row;
-  min-height: 729px;
+  padding-bottom: 191px;
+  min-height: 38px;
+  height: 380px;
 }
 
 .card-detail h3 {
@@ -27,20 +29,24 @@
   color: #ededed;
   text-shadow: rgb(0, 0, 0) 0px 1px 1px, rgb(0, 0, 0) 0px -1px 1px, rgb(0, 0, 0) 1px 0px 1px, rgb(0, 0, 0) -1px 0px 1px;
   text-overflow: ellipsis;
-  margin-left:12px;
-  transform:translatex(417px) translatey(-276px);
- width:406px;
+
+  transform: translatex(417px) translatey(-276px);
+  width: 406px;
 }
 
 
-.card-detail h4{
-  transform:translatex(423px) translatey(-293px);
-  text-align:left;
-  color:#ffffff;
-  line-height:23.1px;
- }
+.card-detail h4 {
+  transform: translatex(423px) translatey(-293px);
+  text-align: left;
+  color: #ffffff;
+  line-height: 23.1px;
+  height: 184px;
+}
 
- 
+.platforms {
+  width: 45%;
+}
+
 .card-detail img {
   height: 255px;
 }
@@ -54,15 +60,35 @@
 }
 
 .samus {
-  height: 716px;
+  margin-top: 1%;
+  height: 550px;
   width: auto;
 }
 
 .p-detail {
-  position:relative;
- top:-200px;
- width:816px;
- left:16px;
   color: #ededed;
-  text-shadow:rgba(0, 0, 0, 0.3) 0px 1px 1px
+  text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px
+}
+
+.detail-img {
+  width: 408px;
+  height: 255px;
+}
+
+.card-detail .p-detail {
+  position: relative;
+  bottom: 300px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.card-detail h4 {
+  font-size: 14px;
+  line-height: 1.3em;
+  text-align: left;
+  text-decoration: none;
+  font-weight: 300;
+  position: relative;
+  top: -4px;
 }
