@@ -3,12 +3,11 @@ import { useState } from "react";
 
 export default function SearchBar({ name }) {
   
-
   const options = [
     { value: "", text: "--Search Filters--" },
-    { value: "apple", text: "🍏 A to Z " },
-    { value: "banana", text: "🧟‍♂️  Z to A " },
-    { value: "kiwi", text: " ⭐ Ranking" },
+    { value: "aToZ", text: "🍏 A to Z " },
+    { value: "zToA", text: "🧟‍♂️  Z to A " },
+    { value: "ranking", text: " ⭐ Ranking" },
   ];
 
   const [selected, setSelected] = useState(options[0].value);

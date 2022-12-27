@@ -17,6 +17,7 @@ export default function Home() {
   }, [dispatch]);
 
   console.log(estadoGames);
+  
 
   return (
     <>

@@ -1,12 +1,12 @@
 .subzero {
-	height: 656px;
+	height: 550px;
 	margin-top: 46px;
 }
 
 .form-container {
 	display: flex;
 	flex-direction: row;
-	min-height: 729px;
+	height: 600px;
 }
 
 .formulario {
