@@ -101,114 +101,67 @@ export default function CreateVideoGame() {
   return (
     <>
       <Nav />
-      <div className="container">
+      <div className="container-create">
         <img className="subzero" src={logo} alt="" />
-        <h1>ESTAS A PUNTO DE CREAR UN JUEGO!</h1>
-        <h3>Rellena los siguientes campos</h3>
-        <form
-          id="survey-form"
-          className="form"
-          noValidate
-          onChange={(e) => ChangeInput(e)}
-          onSubmit={(e) => handleSubmit(e)}
-        >
-          <div>
-            <div>
-              <div className="divTitles">
-                <div>
-                  <label>-Name-</label>
-                  <input
-                    className="label"
-                    type="text"
-                    name="name"
-                    value={game.name}
-                  ></input>
+        <div className="formulario">
+          <h1>Make your Game!</h1>
+          <form
+            id="survey-form"
+            noValidate
+            onChange={(e) => ChangeInput(e)}
+            onSubmit={(e) => handleSubmit(e)}
+          >
+            <label>-Name-</label>
+            <input type="text" name="name" value={game.name}></input>
+            
+            <label>-Released-</label>
+            <input type="date" name="released" value={game.released}></input><br />
+            <label>-Rating-</label>
+            <input type="number" name="rating" value={game.rating} min="0" max="5"></input>
+            <label>-Image URL-</label>
+            <input type="text" name="image" value={game.image}></input>
+            <label>-Description-</label>
+            <input
+              className="decription"
+              type="text"
+              name="description"
+              value={game.description}
+            ></input>
+            <div className="platforms-genres">
+              <label>-Genres-</label>
+              {genres1.map((gen) => (
+                <div key={gen.name}>
+                  <input type="checkbox" name="genres" value={gen.name}></input>
+                  <label name={gen}>{gen.name}</label>
                 </div>
-                <div>
-                  <label>-Description-</label>
-                  <input
-                    className="label"
-                    type="text"
-                    name="description"
-                    value={game.description}
-                  ></input>
-                </div>
-                <div>
-                  <label>-Released-</label>
-                  <input
-                    className="label"
-                    type="date"
-                    name="released"
-                    value={game.released}
-                  ></input>
-                </div>
-                <div>
-                  <label>-Rating-</label>
-                  <input
-                    className="label"
-                    type="number"
-                    name="rating"
-                    value={game.rating}
-                  ></input>
-                </div>
-              </div>
-              <div className="imagediv">
-                <label>-Image URL-</label>
-                <input
-                  className="imagein"
-                  type="text"
-                  name="image"
-                  value={game.image}
-                ></input>
+              ))}
+              <div>
+                {genres2.map((gen) => (
+                  <div key={gen.name}>
+                    <input
+                      type="checkbox"
+                      name="genres"
+                      value={gen.name}
+                    ></input>
+                    <label name={gen}>{gen.name}</label>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="checkboxs">
-              <div className="checks">
-                <label>-Genres-</label>
-                <div className="gendivs">
-                  <div>
-                    {genres1.map((gen) => (
-                      <div key={gen.name}>
-                        <input
-                          type="checkbox"
-                          name="genres"
-                          value={gen.name}
-                        ></input>
-                        <label name={gen}>{gen.name}</label>
-                      </div>
-                    ))}
+            <div className="platforms-create">
+              <label>-Platforms-</label>
+              <div>
+                {randomPlatforms.map((P) => (
+                  <div key={P}>
+                    <input type="checkbox" name="platforms" value={P}></input>
+                    <label name={P}>{P}</label>
                   </div>
-                  <div>
-                    {genres2.map((gen) => (
-                      <div key={gen.name}>
-                        <input
-                          type="checkbox"
-                          name="genres"
-                          value={gen.name}
-                        ></input>
-                        <label name={gen}>{gen.name}</label>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="checks">
-                <label>-Platforms-</label>
-                <div>
-                  {randomPlatforms.map((P) => (
-                    <div key={P}>
-                      <input type="checkbox" name="platforms" value={P}></input>
-                      <label name={P}>{P}</label>
-                    </div>
-                  ))}
-                </div>
+                ))}
               </div>
             </div>
-            <button className="button" type="submit">
-              CREAR!
-            </button>
-          </div>
-        </form>
+            <button type="submit">CREAR!</button>
+          </form>
+        </div>
       </div>
     </>
   );

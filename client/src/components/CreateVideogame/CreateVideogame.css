@@ -3,19 +3,50 @@
 	margin-top: 46px;
 }
 
-.form-container {
-	display: flex;
-	flex-direction: row;
-	height: 600px;
+.formulario {
+	background-color: #5e5e5e;
+	height: 520px;
+	width: 800px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	margin-top: 2%;
+	margin-left: 5%;
+	color: #ffffff;
+	font-style: normal;
+	text-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px;
+	font-size: 14px;
+	line-height: 10px;
 }
 
-.formulario {
-	background-color: red;
-	height: 500px;
-	margin-top: 30px;
-	width: 883px;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
+.container-create {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
 }
+
+.platforms-create {
+	transform: translatex(229px) translatey(-377px);
+}
+
+#survey-form input[type=text] {
+	margin: 1%;
+	border-style: none;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+/* Input */
+#survey-form input[type=date] {
+	margin: 1%;
+	border-style: none;
+}
+
+/* Input */
+#survey-form input[type=number] {
+	margin: 1%;
+	border-style: none;
+	width: 32px;
+}
+
