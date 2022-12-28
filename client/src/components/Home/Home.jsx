@@ -8,36 +8,61 @@ import { getVideogames } from "../../redux/actions";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  let estadoGames = useSelector((state) => state.videogames);
-
+  const estadoGames = useSelector((state) => state.videogames);
   const dispatch = useDispatch();
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     dispatch(getVideogames());
-  }, [dispatch]);
+  }, []);
 
-  console.log(estadoGames);
-  
+  const selectPageHandler = (selectedPage) => {
+    if (
+      selectedPage >= 1 &&
+      selectedPage <= Math.ceil(estadoGames.length / 15) &&
+      selectedPage !== page
+    )
+      setPage(selectedPage);
+  };
 
   return (
     <>
       <div className="home">
         <Nav />
         {estadoGames.length > 0 ? (
-          estadoGames.map((game) => (
-            <Card
-              id={game.id}
-              key={game.id}
-              name={game.name}
-              rating={game.rating}
-              image={game.image}
-              genres={game.genres}
-            />
-          ))
+          estadoGames
+            .slice(page * 15 - 15, page * 15)
+            .map((game) => (
+              <Card
+                id={game.id}
+                key={game.id}
+                name={game.name}
+                rating={game.rating}
+                image={game.image}
+                genres={game.genres}
+              />
+            ))
         ) : (
           <h2>No hay nada</h2>
         )}
       </div>
+      {estadoGames.length > 0 && (
+        <div className="pagination">
+          <span onClick={() => selectPageHandler(page - 1)}>◀</span>
+          {[...Array(Math.ceil(estadoGames.length / 15))].map((_, i) => {
+            return (
+              <span
+                className={page === i + 1 ? "pagination__selected" : ""}
+                onClick={() => selectPageHandler(i + 1)}
+                key={i}
+              >
+                {i + 1}
+              </span>
+            );
+          })}
+          <span onClick={() => selectPageHandler(page + 1)}>▶</span>
+        </div>
+      )}
     </>
   );
 }

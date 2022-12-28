@@ -1,4 +1,5 @@
 Notas : 
     -Arreglar el dismount de detail
-    -Hacer search
-    -Terminar css de formulario
+    -Arreglar paginado del formulario = {
+        estadoGames.length * 0 + 7
+        }
