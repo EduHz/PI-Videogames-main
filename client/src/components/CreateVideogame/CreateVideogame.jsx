@@ -120,13 +120,15 @@ export default function CreateVideoGame() {
             <input type="number" name="rating" value={game.rating} min="0" max="5"></input>
             <label>-Image URL-</label>
             <input type="text" name="image" value={game.image}></input>
-            <label>-Description-</label>
-            <input
-              className="decription"
-              type="text"
-              name="description"
-              value={game.description}
-            ></input>
+            <div className="description-create">
+              <label>-Description-</label>
+              <input
+                className="decription"
+                type="text"
+                name="description"
+                value={game.description}
+              ></input>
+            </div >
             <div className="platforms-genres">
               <label>-Genres-</label>
               {genres1.map((gen) => (
@@ -159,7 +161,8 @@ export default function CreateVideoGame() {
                 ))}
               </div>
             </div>
-            <button type="submit">CREAR!</button>
+            
+            <button type="submit" className="button-create">CREATE</button>
           </form>
         </div>
       </div>
