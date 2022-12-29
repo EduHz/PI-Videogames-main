@@ -1,6 +1,5 @@
 import "./Home.css";
 import Nav from "../Nav/Nav";
-import Pagination from "../Pagination/Pagination";
 import { Card } from "../Card/Card";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -48,7 +47,12 @@ export default function Home() {
       </div>
       {estadoGames.length > 0 && (
         <div className="pagination">
-          <span onClick={() => selectPageHandler(page - 1)}>◀</span>
+          <span
+            onClick={() => selectPageHandler(page - 1)}
+            className={page > 1 ? "" : "pagination__disable"}
+          >
+            ◀
+          </span>
           {[...Array(Math.ceil(estadoGames.length / 15))].map((_, i) => {
             return (
               <span
@@ -60,7 +64,16 @@ export default function Home() {
               </span>
             );
           })}
-          <span onClick={() => selectPageHandler(page + 1)}>▶</span>
+          <span
+            onClick={() => selectPageHandler(page + 1)}
+            className={
+              page < Math.ceil(estadoGames.length / 15)
+                ? ""
+                : "pagination__disable"
+            }
+          >
+            ▶
+          </span>
         </div>
       )}
     </>
