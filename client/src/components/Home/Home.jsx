@@ -10,6 +10,7 @@ export default function Home() {
   const estadoGames = useSelector((state) => state.videogames);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
+  const [busqueda, setBusqueda] = useState("");
 
   useEffect(() => {
     dispatch(getVideogames());
@@ -24,19 +25,30 @@ export default function Home() {
       setPage(selectedPage);
   };
 
-  const busqueda = "gran";
   const encontrar = estadoGames.filter(function (name) {
     if (busqueda == "") return estadoGames;
-    return (name.name.toLowerCase().includes(busqueda));
+    return name.name.toLowerCase().includes(busqueda);
   });
 
-  // games.filter(x => x.name.toLowerCase().includes(""))
+  console.log(estadoGames)
 
   return (
     <>
       <div className="home">
         <Nav />
-
+        <form
+          onSubmit={(e) => {
+            e.preventDefault(); //Previene que se recargue la pagina
+            setBusqueda(""); //Para que se vacie el input
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Search Game..."
+            value={busqueda}
+            onChange={(e) => setBusqueda(e.target.value.toLowerCase())} //(e.target.value) para tomar valor input
+          />
+        </form>
         {encontrar.length > 0 ? (
           encontrar
             .slice(page * 15 - 15, page * 15)
