@@ -24,12 +24,21 @@ export default function Home() {
       setPage(selectedPage);
   };
 
+  const busqueda = "gran";
+  const encontrar = estadoGames.filter(function (name) {
+    if (busqueda == "") return estadoGames;
+    return (name.name.toLowerCase().includes(busqueda));
+  });
+
+  // games.filter(x => x.name.toLowerCase().includes(""))
+
   return (
     <>
       <div className="home">
         <Nav />
-        {estadoGames.length > 0 ? (
-          estadoGames
+
+        {encontrar.length > 0 ? (
+          encontrar
             .slice(page * 15 - 15, page * 15)
             .map((game) => (
               <Card
@@ -45,7 +54,7 @@ export default function Home() {
           <h2>No hay nada</h2>
         )}
       </div>
-      {estadoGames.length > 0 && (
+      {encontrar.length > 0 && (
         <div className="pagination">
           <span
             onClick={() => selectPageHandler(page - 1)}
@@ -53,7 +62,7 @@ export default function Home() {
           >
             ◀
           </span>
-          {[...Array(Math.ceil(estadoGames.length / 15))].map((_, i) => {
+          {[...Array(Math.ceil(encontrar.length / 15))].map((_, i) => {
             return (
               <span
                 className={page === i + 1 ? "pagination__selected" : ""}
@@ -67,7 +76,7 @@ export default function Home() {
           <span
             onClick={() => selectPageHandler(page + 1)}
             className={
-              page < Math.ceil(estadoGames.length / 15)
+              page < Math.ceil(encontrar.length / 15)
                 ? ""
                 : "pagination__disable"
             }
