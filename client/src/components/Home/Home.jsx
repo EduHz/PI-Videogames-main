@@ -3,8 +3,7 @@ import Nav from "../Nav/Nav";
 import { Card } from "../Card/Card";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getVideogames } from "../../redux/actions";
-import { Link } from "react-router-dom";
+import { getVideogames} from "../../redux/actions";
 
 export default function Home() {
   const estadoGames = useSelector((state) => state.videogames);
@@ -14,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(getVideogames());
-  }, []);
+  }, [dispatch]);
 
   const selectPageHandler = (selectedPage) => {
     if (
@@ -26,11 +25,43 @@ export default function Home() {
   };
 
   const encontrar = estadoGames.filter(function (name) {
-    if (busqueda == "") return estadoGames;
+    if (busqueda === "") return estadoGames;
+    if (busqueda === "A to Z") {
+      return estadoGames.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
+    } else {
+      if (busqueda === "Z to A")
+        return estadoGames.sort(function (a, b) {
+          return -1 * a.name.localeCompare(b.name);
+        });
+    }
+    if (
+      busqueda === "rpg" ||
+      busqueda === "platformer" ||
+      busqueda === "fighting" ||
+      busqueda === "shooter" ||
+      busqueda === "adventure" ||
+      busqueda === "arcade" ||
+      busqueda === "racing" ||
+      busqueda === "board games" ||
+      busqueda === "indie" ||
+      busqueda === "casual" ||
+      busqueda === "family" ||
+      busqueda === "educational" ||
+      busqueda === "strategy" ||
+      busqueda === "simulation" ||
+      busqueda === "sports" ||
+      busqueda === "card" ||
+      busqueda === "action" ||
+      busqueda === "puzzle" ||
+      busqueda === "massively multiplayer"
+    )
+      return name.genres.toLowerCase().includes(busqueda);
     return name.name.toLowerCase().includes(busqueda);
   });
 
-  console.log(estadoGames)
+  console.log(estadoGames.reverse());
 
   return (
     <>
@@ -45,10 +76,44 @@ export default function Home() {
           <input
             type="text"
             placeholder="Search Game..."
-            value={busqueda}
             onChange={(e) => setBusqueda(e.target.value.toLowerCase())} //(e.target.value) para tomar valor input
           />
         </form>
+
+        <select>
+          <option>--Genre--</option>
+          <option onClick={(e) => setBusqueda("action")}>Action</option>
+          <option onClick={(e) => setBusqueda("adventure")}>Adventure</option>
+          <option onClick={(e) => setBusqueda("arcade")}>Arcade</option>
+          <option onClick={(e) => setBusqueda("board games")}>
+            Board Games
+          </option>
+          <option onClick={(e) => setBusqueda("card")}>Card</option>
+          <option onClick={(e) => setBusqueda("casual")}>Casual</option>
+          <option onClick={(e) => setBusqueda("educational")}>
+            Educational
+          </option>
+          <option onClick={(e) => setBusqueda("family")}>Family</option>
+          <option onClick={(e) => setBusqueda("fighting")}>Fighting</option>
+          <option onClick={(e) => setBusqueda("indie")}>Indie</option>
+          <option onClick={(e) => setBusqueda("massively multiplayer")}>
+            Massively Multiplayer
+          </option>
+          <option onClick={(e) => setBusqueda("platformer")}>Platformer</option>
+          <option onClick={(e) => setBusqueda("puzzle")}>Puzzle</option>
+          <option onClick={(e) => setBusqueda("racing")}>Racing</option>
+          <option onClick={(e) => setBusqueda("rpg")}>RPG</option>
+          <option onClick={(e) => setBusqueda("shooter")}>Shooter</option>
+          <option onClick={(e) => setBusqueda("simulation")}>Simulation</option>
+          <option onClick={(e) => setBusqueda("sports")}>Sports</option>
+          <option onClick={(e) => setBusqueda("strategy")}>Strategy</option>
+        </select>
+        <select>
+          <option>Order by</option>
+          <option onClick={(e) => setBusqueda("A to Z")}>🍏 A to Z</option>
+          <option onClick={(e) => setBusqueda("Z to A")}>🧟 Z to A</option>
+        </select>
+
         {encontrar.length > 0 ? (
           encontrar
             .slice(page * 15 - 15, page * 15)
@@ -100,55 +165,3 @@ export default function Home() {
     </>
   );
 }
-//   const [games, setGames] = useState([]);
-//   //Necistamos almacenar el objeto de info para la paginacion
-//   const [info, setInfo] = useState({});
-
-//   const initialUrl =
-//     "https://api.rawg.io/api/games?key=2ebf403c8d3847529cb6010c7dc76678&page=2";
-
-//   //Funcion para hacer una request al Link de la API
-//   const fetchGames = (url) => {
-//     fetch(url)
-//       //La funcion fetch retorna una promesa
-//       .then((respuesta) => respuesta.json())
-//       //con respuesta.json, lo convertimos en una estructura JavaScript
-//       .then((datosDeLaApi) => {
-//         setGames(datosDeLaApi.results);
-//         setInfo(datosDeLaApi);
-//       })
-//       //datosDeLaApi, son los datos de la api, para poder consumir en JavaScript
-//       .catch((error) => console.log(error));
-//   };
-
-//   function onPreviuos() {
-//     fetchGames(info.previous);
-//   }
-//   //Debemos pasarles estas funciones al componente de "pagination"
-//   function onNext() {
-//     fetchGames(info.next);
-//   }
-
-//   //UseEffect , nos permite manejar los efectos colaterales
-//   useEffect(() => {
-//     //Llamamos a la funcion, y la damos el parametro deseado (initialUrl)
-//     fetchGames(initialUrl);
-//   }, []);
-
-//   return (
-//     <>
-//       <div className="home">
-//         <Nav />
-//         <Card games={games} />
-//         <Pagination
-//           prev={info.prev}
-//           next={info.next}
-//           onPreviuos={onPreviuos}
-//           onNext={onNext}
-//         />
-//       </div>
-//     </>
-//   );
-// }
-
-//!video minuto 43:50
