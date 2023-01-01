@@ -3,7 +3,7 @@ import Nav from "../Nav/Nav";
 import { Card } from "../Card/Card";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getVideogames} from "../../redux/actions";
+import { getVideogames } from "../../redux/actions";
 
 export default function Home() {
   const estadoGames = useSelector((state) => state.videogames);
@@ -24,8 +24,9 @@ export default function Home() {
       setPage(selectedPage);
   };
 
-  const encontrar = estadoGames.filter(function (name) {
-    if (busqueda === "") return estadoGames;
+  const encontrar = estadoGames.filter(function (res) {
+    if (busqueda === 'created') return res.id.length > 5 
+    if (busqueda === 'existing') return res.id >= 4
     if (busqueda === "A to Z") {
       return estadoGames.sort(function (a, b) {
         return a.name.localeCompare(b.name);
@@ -57,11 +58,9 @@ export default function Home() {
       busqueda === "puzzle" ||
       busqueda === "massively multiplayer"
     )
-      return name.genres.toLowerCase().includes(busqueda);
-    return name.name.toLowerCase().includes(busqueda);
+      return res.genres.toLowerCase().includes(busqueda);
+    return res.name.toLowerCase().includes(busqueda);
   });
-
-  console.log(estadoGames.reverse());
 
   return (
     <>
