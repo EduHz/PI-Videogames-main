@@ -3,3 +3,7 @@ Notas :
     -Arreglar paginado del formulario = {
         estadoGames.length * 0 + 7
         }
+
+
+    // if (busqueda === "created") return res.id.length > 5;
+    // if (busqueda === "existing") return res.id >= 4;

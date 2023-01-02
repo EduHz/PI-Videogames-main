@@ -25,8 +25,8 @@ export default function Home() {
   };
 
   const encontrar = estadoGames.filter(function (res) {
-    if (busqueda === 'created') return res.id.length > 5 
-    if (busqueda === 'existing') return res.id >= 4
+    if (busqueda === 'make') return res.id.length > 5 
+    if (busqueda === 'makee') return res.id.length < 5
     if (busqueda === "A to Z") {
       return estadoGames.sort(function (a, b) {
         return a.name.localeCompare(b.name);
