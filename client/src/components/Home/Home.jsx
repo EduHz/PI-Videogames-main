@@ -25,8 +25,8 @@ export default function Home() {
   };
 
   const encontrar = estadoGames.filter(function (res) {
-    if (busqueda === 'make') return res.id.length > 5 
-    if (busqueda === 'makee') return res.id.length < 5
+    if (busqueda === 'created') return res.id.length > 0
+    if (busqueda === 'existing') return res.id < 999999
     if (busqueda === "A to Z") {
       return estadoGames.sort(function (a, b) {
         return a.name.localeCompare(b.name);
@@ -70,6 +70,7 @@ export default function Home() {
           onSubmit={(e) => {
             e.preventDefault(); //Previene que se recargue la pagina
             setBusqueda(""); //Para que se vacie el input
+            
           }}
         >
           <input
@@ -111,6 +112,11 @@ export default function Home() {
           <option>Order by</option>
           <option onClick={(e) => setBusqueda("A to Z")}>🍏 A to Z</option>
           <option onClick={(e) => setBusqueda("Z to A")}>🧟 Z to A</option>
+        </select>
+        <select>
+          <option>All</option>
+          <option onClick={(e) => setBusqueda("created")}>🍏 Created </option>
+          <option onClick={(e) => setBusqueda("existing")}>🧟 Existing </option>
         </select>
 
         {encontrar.length > 0 ? (
