@@ -24,69 +24,70 @@ export default function Home() {
       setPage(selectedPage);
   };
 
-  const encontrar = () => estadoGames.filter(function (res) {
-    if (busqueda === "created") {
-      return res.id.length > 0;
-    } else if (busqueda === "existing") {
-      return res.id < 999999;
-    } else if (busqueda === "rating") {
-      return estadoGames.sort((a, b) => b.rating - a.rating);
-    } else if (busqueda === "A to Z") {
-      return estadoGames.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (busqueda === "Z to A") {
-      return estadoGames.sort((a, b) => -1 * a.name.localeCompare(b.name));
-    } else if (
-      busqueda === "rpg" ||
-      busqueda === "platformer" ||
-      busqueda === "fighting" ||
-      busqueda === "shooter" ||
-      busqueda === "adventure" ||
-      busqueda === "arcade" ||
-      busqueda === "racing" ||
-      busqueda === "board games" ||
-      busqueda === "indie" ||
-      busqueda === "casual" ||
-      busqueda === "family" ||
-      busqueda === "educational" ||
-      busqueda === "strategy" ||
-      busqueda === "simulation" ||
-      busqueda === "sports" ||
-      busqueda === "card" ||
-      busqueda === "action" ||
-      busqueda === "puzzle" ||
-      busqueda === "massively multiplayer"
-    ) {
-      return res.genres.toLowerCase().includes(busqueda);
-    } else return res.name.toLowerCase().includes(busqueda);
-  });
+  const encontrar = () =>
+    estadoGames.filter(function (res) {
+      if (busqueda === "created") {
+        return res.id.length > 0;
+      } else if (busqueda === "existing") {
+        return res.id < 999999;
+      } else if (busqueda === "rating") {
+        return estadoGames.sort((a, b) => b.rating - a.rating);
+      } else if (busqueda === "A to Z") {
+        return estadoGames.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (busqueda === "Z to A") {
+        return estadoGames.sort((a, b) => -1 * a.name.localeCompare(b.name));
+      } else if (
+        busqueda === "rpg" ||
+        busqueda === "platformer" ||
+        busqueda === "fighting" ||
+        busqueda === "shooter" ||
+        busqueda === "adventure" ||
+        busqueda === "arcade" ||
+        busqueda === "racing" ||
+        busqueda === "board games" ||
+        busqueda === "indie" ||
+        busqueda === "casual" ||
+        busqueda === "family" ||
+        busqueda === "educational" ||
+        busqueda === "strategy" ||
+        busqueda === "simulation" ||
+        busqueda === "sports" ||
+        busqueda === "card" ||
+        busqueda === "action" ||
+        busqueda === "puzzle" ||
+        busqueda === "massively multiplayer"
+      ) {
+        return res.genres.toLowerCase().includes(busqueda);
+      } else return res.name.toLowerCase().includes(busqueda);
+    });
 
   const options = [
     { value: "", text: "--Search Filters--" },
     { value: "A to Z", text: "🍏 A to Z " },
     { value: "Z to A", text: "🧟‍♂️ Z to A " },
-    { value: "rating", text: "⭐ Rating" },
     { value: "created", text: "🔨 Created" },
     { value: "existing", text: "✅ Existing" },
+    { value: "rating", text: "⭐ Rating" },
     { value: " ", text: "--Genres--" },
-    { value: "rpg", text: "🦇 RPG" },
-    { value: "platformer", text: "💻 Platformer" },
-    { value: "fighting", text: "🤼 Fighting" },
-    { value: "shooter", text: "🔫 Shooter" },
+    { value: "action", text: "💥 Action" },
     { value: "adventure", text: "⛺ Adventure" },
     { value: "arcade", text: "🎮 Arcade" },
-    { value: "racing", text: "🚙 Racing" },
     { value: "board games", text: "🏓 Board Games" },
-    { value: "indie", text: "🤯 Indie" },
+    { value: "card", text: "🃏 Card" },
     { value: "casual", text: "🎲 Casual" },
     { value: "family", text: "👩‍👩‍👦‍👦 Family" },
+    { value: "fighting", text: "🤼 Fighting" },
     { value: "educational", text: "📕 Educational" },
+    { value: "indie", text: "🤯 Indie" },
+    { value: "massively multiplayer", text: "👥 Multiplayer" },
+    { value: "platformer", text: "💻 Platformer" },
+    { value: "puzzle", text: "🧩 Puzzle" },
+    { value: "racing", text: "🚙 Racing" },
+    { value: "rpg", text: "🦇 RPG" },
+    { value: "shooter", text: "🔫 Shooter" },
     { value: "strategy", text: "🤓 Strategy" },
     { value: "simulation", text: "🦸‍♂️ Simulation" },
     { value: "sports", text: "⚽ Sports" },
-    { value: "card", text: "🃏 Card" },
-    { value: "action", text: "💥 Action" },
-    { value: "puzzle", text: "🧩 Puzzle" },
-    { value: "massively multiplayer", text: "👥 Multiplayer" },
   ];
 
   const [selected, setSelected] = useState(options[0].value);
@@ -144,7 +145,7 @@ export default function Home() {
           <h2>No hay nada</h2>
         )}
       </div>
-      {encontrar.length > 0 && (
+      {encontrar().length > 0 && (
         <div className="pagination">
           <span
             onClick={() => selectPageHandler(page - 1)}
@@ -152,7 +153,7 @@ export default function Home() {
           >
             ◀
           </span>
-          {[...Array(Math.ceil(encontrar.length / 15))].map((_, i) => {
+          {[...Array(Math.ceil(encontrar().length / 15))].map((_, i) => {
             return (
               <span
                 className={page === i + 1 ? "pagination__selected" : ""}
@@ -166,7 +167,7 @@ export default function Home() {
           <span
             onClick={() => selectPageHandler(page + 1)}
             className={
-              page < Math.ceil(encontrar.length / 15)
+              page < Math.ceil(encontrar().length / 15)
                 ? ""
                 : "pagination__disable"
             }
