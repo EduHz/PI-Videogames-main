@@ -13,7 +13,7 @@ export default function DetailVideogame() {
 
   useEffect(() => {
     dispatch(getVideogameById(idPage));
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

@@ -25,18 +25,20 @@ export default function Home() {
   };
 
   const encontrar = estadoGames.filter(function (res) {
-    if (busqueda === 'created') return res.id.length > 0
-    if (busqueda === 'existing') return res.id < 999999
-    if (busqueda === "A to Z") {
+    if (busqueda === "created") return res.id.length > 0;
+    if (busqueda === "existing") return res.id < 999999;
+    if (busqueda === "rating")
+      return estadoGames.sort(function (a, b) {
+        return b.rating - a.rating;
+      });
+    if (busqueda === "A to Z")
       return estadoGames.sort(function (a, b) {
         return a.name.localeCompare(b.name);
       });
-    } else {
-      if (busqueda === "Z to A")
-        return estadoGames.sort(function (a, b) {
-          return -1 * a.name.localeCompare(b.name);
-        });
-    }
+    if (busqueda === "Z to A")
+      return estadoGames.sort(function (a, b) {
+        return -1 * a.name.localeCompare(b.name);
+      });
     if (
       busqueda === "rpg" ||
       busqueda === "platformer" ||
@@ -62,15 +64,52 @@ export default function Home() {
     return res.name.toLowerCase().includes(busqueda);
   });
 
+  const options = [
+    { value: "", text: "--Search Filters--" },
+    { value: "A to Z", text: "🍏 A to Z " },
+    { value: "Z to A", text: "🧟‍♂️ Z to A " },
+    { value: "rating", text: "⭐ Rating" },
+    { value: "created", text: "🔨 Created" },
+    { value: "existing", text: "✅ Existing" },
+    { value: " ", text: "--Genres--" },
+    { value: "rpg", text: "🦇 RPG" },
+    { value: "platformer", text: "💻 Platformer" },
+    { value: "fighting", text: "🤼 Fighting" },
+    { value: "shooter", text: "🔫 Shooter" },
+    { value: "adventure", text: "⛺ Adventure" },
+    { value: "arcade", text: "🎮 Arcade" },
+    { value: "racing", text: "🚙 Racing" },
+    { value: "board games", text: "🏓 Board Games" },
+    { value: "indie", text: "🤯 Indie" },
+    { value: "casual", text: "🎲 Casual" },
+    { value: "family", text: "👩‍👩‍👦‍👦 Family" },
+    { value: "educational", text: "📕 Educational" },
+    { value: "strategy", text: "🤓 Strategy" },
+    { value: "simulation", text: "🦸‍♂️ Simulation" },
+    { value: "sports", text: "⚽ Sports" },
+    { value: "card", text: "🃏 Card" },
+    { value: "action", text: "💥 Action" },
+    { value: "puzzle", text: "🧩 Puzzle" },
+    { value: "massively multiplayer", text: "👥 Multiplayer" },
+  ];
+
+  const [selected, setSelected] = useState(options[0].value);
+
+  const handleChange = (event) => {
+    setSelected(event.target.value);
+    setBusqueda(event.target.value);
+  };
+  console.log(encontrar);
+
   return (
     <>
       <div className="home">
         <Nav />
         <form
+          className="form-css"
           onSubmit={(e) => {
             e.preventDefault(); //Previene que se recargue la pagina
             setBusqueda(""); //Para que se vacie el input
-            
           }}
         >
           <input
@@ -78,48 +117,21 @@ export default function Home() {
             placeholder="Search Game..."
             onChange={(e) => setBusqueda(e.target.value.toLowerCase())} //(e.target.value) para tomar valor input
           />
+
+          <select
+            value={selected}
+            onChange={handleChange}
+            className="selected-css"
+          >
+            {options.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.text}
+              </option>
+            ))}
+          </select>
         </form>
 
-        <select>
-          <option>--Genre--</option>
-          <option onClick={(e) => setBusqueda("action")}>Action</option>
-          <option onClick={(e) => setBusqueda("adventure")}>Adventure</option>
-          <option onClick={(e) => setBusqueda("arcade")}>Arcade</option>
-          <option onClick={(e) => setBusqueda("board games")}>
-            Board Games
-          </option>
-          <option onClick={(e) => setBusqueda("card")}>Card</option>
-          <option onClick={(e) => setBusqueda("casual")}>Casual</option>
-          <option onClick={(e) => setBusqueda("educational")}>
-            Educational
-          </option>
-          <option onClick={(e) => setBusqueda("family")}>Family</option>
-          <option onClick={(e) => setBusqueda("fighting")}>Fighting</option>
-          <option onClick={(e) => setBusqueda("indie")}>Indie</option>
-          <option onClick={(e) => setBusqueda("massively multiplayer")}>
-            Massively Multiplayer
-          </option>
-          <option onClick={(e) => setBusqueda("platformer")}>Platformer</option>
-          <option onClick={(e) => setBusqueda("puzzle")}>Puzzle</option>
-          <option onClick={(e) => setBusqueda("racing")}>Racing</option>
-          <option onClick={(e) => setBusqueda("rpg")}>RPG</option>
-          <option onClick={(e) => setBusqueda("shooter")}>Shooter</option>
-          <option onClick={(e) => setBusqueda("simulation")}>Simulation</option>
-          <option onClick={(e) => setBusqueda("sports")}>Sports</option>
-          <option onClick={(e) => setBusqueda("strategy")}>Strategy</option>
-        </select>
-        <select>
-          <option>Order by</option>
-          <option onClick={(e) => setBusqueda("A to Z")}>🍏 A to Z</option>
-          <option onClick={(e) => setBusqueda("Z to A")}>🧟 Z to A</option>
-        </select>
-        <select>
-          <option>All</option>
-          <option onClick={(e) => setBusqueda("created")}>🍏 Created </option>
-          <option onClick={(e) => setBusqueda("existing")}>🧟 Existing </option>
-        </select>
-
-        {encontrar.length > 0 ? (
+        {encontrar[0] ? (
           encontrar
             .slice(page * 15 - 15, page * 15)
             .map((game) => (

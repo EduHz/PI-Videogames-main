@@ -27,3 +27,8 @@ body {
 .pagination__disable {
   opacity: 0;
 }
+
+.form-css {
+  width:23% ;
+ transform: translatex(900px) translatey(-30px);
+}
