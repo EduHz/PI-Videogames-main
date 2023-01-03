@@ -24,22 +24,18 @@ export default function Home() {
       setPage(selectedPage);
   };
 
-  const encontrar = estadoGames.filter(function (res) {
-    if (busqueda === "created") return res.id.length > 0;
-    if (busqueda === "existing") return res.id < 999999;
-    if (busqueda === "rating")
-      return estadoGames.sort(function (a, b) {
-        return b.rating - a.rating;
-      });
-    if (busqueda === "A to Z")
-      return estadoGames.sort(function (a, b) {
-        return a.name.localeCompare(b.name);
-      });
-    if (busqueda === "Z to A")
-      return estadoGames.sort(function (a, b) {
-        return -1 * a.name.localeCompare(b.name);
-      });
-    if (
+  const encontrar = () => estadoGames.filter(function (res) {
+    if (busqueda === "created") {
+      return res.id.length > 0;
+    } else if (busqueda === "existing") {
+      return res.id < 999999;
+    } else if (busqueda === "rating") {
+      return estadoGames.sort((a, b) => b.rating - a.rating);
+    } else if (busqueda === "A to Z") {
+      return estadoGames.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (busqueda === "Z to A") {
+      return estadoGames.sort((a, b) => -1 * a.name.localeCompare(b.name));
+    } else if (
       busqueda === "rpg" ||
       busqueda === "platformer" ||
       busqueda === "fighting" ||
@@ -59,9 +55,9 @@ export default function Home() {
       busqueda === "action" ||
       busqueda === "puzzle" ||
       busqueda === "massively multiplayer"
-    )
+    ) {
       return res.genres.toLowerCase().includes(busqueda);
-    return res.name.toLowerCase().includes(busqueda);
+    } else return res.name.toLowerCase().includes(busqueda);
   });
 
   const options = [
@@ -131,8 +127,8 @@ export default function Home() {
           </select>
         </form>
 
-        {encontrar[0] ? (
-          encontrar
+        {encontrar().length > 0 ? (
+          encontrar()
             .slice(page * 15 - 15, page * 15)
             .map((game) => (
               <Card
