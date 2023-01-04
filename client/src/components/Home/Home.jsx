@@ -4,6 +4,7 @@ import { Card } from "../Card/Card";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getVideogames } from "../../redux/actions";
+import Loading from "../Loading/Loading";
 
 export default function Home() {
   const estadoGames = useSelector((state) => state.videogames);
@@ -27,9 +28,9 @@ export default function Home() {
   const encontrar = () =>
     estadoGames.filter(function (res) {
       if (busqueda === "created") {
-        return res.id.length > 0;
+        return res.id.length > 0 
       } else if (busqueda === "existing") {
-        return res.id < 999999;
+        return res.id >= 0;
       } else if (busqueda === "rating") {
         return estadoGames.sort((a, b) => b.rating - a.rating);
       } else if (busqueda === "A to Z") {
@@ -96,7 +97,6 @@ export default function Home() {
     setSelected(event.target.value);
     setBusqueda(event.target.value);
   };
-  console.log(encontrar);
 
   return (
     <>
@@ -142,7 +142,7 @@ export default function Home() {
               />
             ))
         ) : (
-          <h2>No hay nada</h2>
+          <Loading />
         )}
       </div>
       {encontrar().length > 0 && (
