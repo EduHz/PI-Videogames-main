@@ -10,7 +10,7 @@ export default function Home() {
   const estadoGames = useSelector((state) => state.videogames);
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  const [busqueda, setBusqueda] = useState("");
+  const [filter, setfilter] = useState("");
 
   useEffect(() => {
     dispatch(getVideogames());
@@ -25,41 +25,41 @@ export default function Home() {
       setPage(selectedPage);
   };
 
-  const encontrar = () =>
+  const result = () =>
     estadoGames.filter(function (res) {
-      if (busqueda === "created") {
+      if (filter === "created") {
         return res.id.length > 0 
-      } else if (busqueda === "existing") {
+      } else if (filter === "existing") {
         return res.id >= 0;
-      } else if (busqueda === "rating") {
+      } else if (filter === "rating") {
         return estadoGames.sort((a, b) => b.rating - a.rating);
-      } else if (busqueda === "A to Z") {
+      } else if (filter === "A to Z") {
         return estadoGames.sort((a, b) => a.name.localeCompare(b.name));
-      } else if (busqueda === "Z to A") {
+      } else if (filter === "Z to A") {
         return estadoGames.sort((a, b) => -1 * a.name.localeCompare(b.name));
       } else if (
-        busqueda === "rpg" ||
-        busqueda === "platformer" ||
-        busqueda === "fighting" ||
-        busqueda === "shooter" ||
-        busqueda === "adventure" ||
-        busqueda === "arcade" ||
-        busqueda === "racing" ||
-        busqueda === "board games" ||
-        busqueda === "indie" ||
-        busqueda === "casual" ||
-        busqueda === "family" ||
-        busqueda === "educational" ||
-        busqueda === "strategy" ||
-        busqueda === "simulation" ||
-        busqueda === "sports" ||
-        busqueda === "card" ||
-        busqueda === "action" ||
-        busqueda === "puzzle" ||
-        busqueda === "massively multiplayer"
+        filter === "rpg" ||
+        filter === "platformer" ||
+        filter === "fighting" ||
+        filter === "shooter" ||
+        filter === "adventure" ||
+        filter === "arcade" ||
+        filter === "racing" ||
+        filter === "board games" ||
+        filter === "indie" ||
+        filter === "casual" ||
+        filter === "family" ||
+        filter === "educational" ||
+        filter === "strategy" ||
+        filter === "simulation" ||
+        filter === "sports" ||
+        filter === "card" ||
+        filter === "action" ||
+        filter === "puzzle" ||
+        filter === "massively multiplayer"
       ) {
-        return res.genres.toLowerCase().includes(busqueda);
-      } else return res.name.toLowerCase().includes(busqueda);
+        return res.genres.toLowerCase().includes(filter);
+      } else return res.name.toLowerCase().includes(filter);
     });
 
   const options = [
@@ -95,7 +95,7 @@ export default function Home() {
 
   const handleChange = (event) => {
     setSelected(event.target.value);
-    setBusqueda(event.target.value);
+    setfilter(event.target.value);
   };
 
   return (
@@ -106,13 +106,13 @@ export default function Home() {
           className="form-css"
           onSubmit={(e) => {
             e.preventDefault(); //Previene que se recargue la pagina
-            setBusqueda(""); //Para que se vacie el input
+            setfilter(""); //Para que se vacie el input
           }}
         >
           <input
             type="text"
             placeholder="Search Game..."
-            onChange={(e) => setBusqueda(e.target.value.toLowerCase())} //(e.target.value) para tomar valor input
+            onChange={(e) => setfilter(e.target.value.toLowerCase())} //(e.target.value) para tomar valor input
           />
 
           <select
@@ -128,8 +128,8 @@ export default function Home() {
           </select>
         </form>
 
-        {encontrar().length > 0 ? (
-          encontrar()
+        {result().length > 0 ? (
+          result()
             .slice(page * 15 - 15, page * 15)
             .map((game) => (
               <Card
@@ -145,7 +145,7 @@ export default function Home() {
           <Loading />
         )}
       </div>
-      {encontrar().length > 0 && (
+      {result().length > 0 && (
         <div className="pagination">
           <span
             onClick={() => selectPageHandler(page - 1)}
@@ -153,7 +153,7 @@ export default function Home() {
           >
             ◀
           </span>
-          {[...Array(Math.ceil(encontrar().length / 15))].map((_, i) => {
+          {[...Array(Math.ceil(result().length / 15))].map((_, i) => {
             return (
               <span
                 className={page === i + 1 ? "pagination__selected" : ""}
@@ -167,7 +167,7 @@ export default function Home() {
           <span
             onClick={() => selectPageHandler(page + 1)}
             className={
-              page < Math.ceil(encontrar().length / 15)
+              page < Math.ceil(result().length / 15)
                 ? ""
                 : "pagination__disable"
             }

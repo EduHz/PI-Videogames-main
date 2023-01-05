@@ -66,25 +66,31 @@ export default function CreateVideoGame() {
 
     // Validaciones
     if (!obj.name) {
-      alert("Hey! falta el nombre.");
+      alert("Please, enter a name");
       return;
     }
     if (!obj.description) {
-      alert("Hey! aun falta la descripcion.");
+      alert("Please, enter a description");
       return;
     }
     if (!obj.released) {
-      alert("Hey! falta la fecha de lanzamiento.");
+      alert("Enter a released date!");
       return;
     }
     if (obj.rating > 5 || obj.rating < 0) {
-      alert("Hey! el rating debe estar entre 0 and 5.");
+      alert("The rating most be between 0 and 5");
+      return;
+    }
+    if (!obj.image) {
+      alert("Please, load a image");
       return;
     }
 
+
+    
     dispatch(createVideogame(obj));
     e.target.reset();
-    alert("Videogame creado correctamente !");
+    alert("Video game created successfully!");
     /* dispatch(getVideogames()) */
 
     setGame({

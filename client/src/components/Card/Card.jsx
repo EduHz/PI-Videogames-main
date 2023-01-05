@@ -12,7 +12,7 @@ export function Card({ name, rating, image, genres, id }) {
           <h3>{name.slice(0, 20)}</h3>
           <h4>
             {/*De esta forma mostramos unicamente 3 generos*/}
-            {genres.split(",").slice(0, 2)}
+            {genres.split(",").slice(0, 3)}
             <br />⭐{rating}
           </h4>
         </div>
