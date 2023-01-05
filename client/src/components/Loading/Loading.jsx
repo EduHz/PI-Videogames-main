@@ -1,8 +1,9 @@
-export default function NotCreated() {
+import "../Loading/Loading.css";
 
-    return (
-        <div> 
-            <h1>Cargando...</h1>
-        </div>
-    )
+export default function NotCreated() {
+  return (
+    <div class="wrapper">
+      <div class="cssload-loader"></div>
+    </div>
+  );
 }

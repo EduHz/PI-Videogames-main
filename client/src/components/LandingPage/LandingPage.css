@@ -1,6 +1,6 @@
 .mylandingpage {
         margin: -10px;
-        background-image: url("../../assets/WallpaperDog-5446501.jpg");
+        background-image: url("../../assets/423532.jpg");
         width: 100mh;
         height: 100vh;
         -webkit-background-size: cover;
@@ -10,5 +10,52 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         display: flex;
-      
+}
+
+::-webkit-scrollbar {
+        display: none;
+}
+
+.coin {
+        width: 6% !important;
+        height: 4% !important;
+        transform: translatex(624px) translatey(333px);
+        position: relative;
+        top: 25px;
+        right: 115px;
+}
+
+.h4-coin {
+        height: 18px;
+        color: hsl(0, 0%, 100%);
+        left: 315px;
+        position: relative;
+        top: 312px;
+}
+
+.credits{
+        height: 21px;
+        transform:translatex(-192px) translatey(600px);
+ color:#e9ed30;
+
+
+}
+
+.landing-h1 {
+        height: 68px;
+        transform: translatex(614px) translatey(94px);
+        color: #ffffff;
+}
+
+.box {
+        height:5vh;
+ border-style:none;
+ transform:translatex(330px) translatey(500px);
+ color:#ddf929;
+ font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;
+ font-size:29px;
+ line-height:6.6px;
+ font-style:italic;
+ text-decoration:none;
+ text-shadow:rgb(255, 255, 255) 0px 1px 1px, rgb(0, 0, 0) 0px -1px 1px;
 }
