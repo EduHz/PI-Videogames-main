@@ -9,15 +9,15 @@
 
 .container {
   display: inline-block;
-  margin: 1%
+  transform:translatex(15px) translatey(0px);
 }
 
 .card {
-  height: 260px;
-  width: 259px;
+  height: 258px;
+  width: 258px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  transform:translatex(25%)
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
 
 .card h3 {

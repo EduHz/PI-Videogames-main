@@ -11,8 +11,8 @@ const router = Router();
 // Query -> name ? db + api : 100 primeros juegos
 
 router.get('/', async function (req, res) {
+  // Parametros que pasamos a la URL
   const { name } = req.query;
-  
   try {
     if (name) {
       let gamesDB = await Videogame.findOne({where: {name: name}, include: [Genre]});
