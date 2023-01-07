@@ -42,6 +42,12 @@ export default function rootReducer(state = initialState, action) {
         createVideogame: action.payload,
       };
 
+    case "DETAIL_CLEAR":
+      return {
+        ...state,
+        searchVideogameById: [],
+      };
+
     default:
       return state;
   }
