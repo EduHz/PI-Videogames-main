@@ -4,6 +4,7 @@ import logo from "../../assets/subzero.png";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createVideogame, getGenres } from "../../redux/actions";
+import Loading from "../Loading/Loading";
 
 export default function CreateVideoGame() {
   const dispatch = useDispatch();
@@ -86,8 +87,6 @@ export default function CreateVideoGame() {
       return;
     }
 
-
-    
     dispatch(createVideogame(obj));
     e.target.reset();
     alert("Video game created successfully!");
@@ -107,44 +106,45 @@ export default function CreateVideoGame() {
   return (
     <>
       <Nav />
-      <div className="container-create">
-        <img className="subzero" src={logo} alt="" />
-        <div className="formulario">
-          <h1>Make your Game!</h1>
-          <form
-            id="survey-form"
-            noValidate
-            onChange={(e) => ChangeInput(e)}
-            onSubmit={(e) => handleSubmit(e)}
-          >
-            <label>-Name-</label>
-            <input type="text" name="name" value={game.name}></input>
-            
-            <label>-Released-</label>
-            <input type="date" name="released" value={game.released}></input><br />
-            <label>-Rating-</label>
-            <input type="number" name="rating" value={game.rating} min="0" max="5"></input>
-            <label>-Image URL-</label>
-            <input type="text" name="image" value={game.image}></input>
-            <div className="description-create">
-              <label>-Description-</label>
+      {game.platforms.length == 0 ? (
+        <div className="container-create">
+          <img className="subzero" src={logo} alt="" />
+          <div className="formulario">
+            <h1>Make your Game!</h1>
+            <form
+              id="survey-form"
+              noValidate
+              onChange={(e) => ChangeInput(e)}
+              onSubmit={(e) => handleSubmit(e)}
+            >
+              <label>-Name-</label>
+              <input type="text" name="name" value={game.name}></input>
+
+              <label>-Released-</label>
+              <input type="date" name="released" value={game.released}></input>
+              <br />
+              <label>-Rating-</label>
               <input
-                className="decription"
-                type="text"
-                name="description"
-                value={game.description}
+                type="number"
+                name="rating"
+                value={game.rating}
+                min="0"
+                max="5"
               ></input>
-            </div >
-            <div className="platforms-genres">
-              <label>-Genres-</label>
-              {genres1.map((gen) => (
-                <div key={gen.name}>
-                  <input type="checkbox" name="genres" value={gen.name}></input>
-                  <label name={gen}>{gen.name}</label>
-                </div>
-              ))}
-              <div>
-                {genres2.map((gen) => (
+              <label>-Image URL-</label>
+              <input type="text" name="image" value={game.image}></input>
+              <div className="description-create">
+                <label>-Description-</label>
+                <input
+                  className="decription"
+                  type="text"
+                  name="description"
+                  value={game.description}
+                ></input>
+              </div>
+              <div className="platforms-genres">
+                <label>-Genres-</label>
+                {genres1.map((gen) => (
                   <div key={gen.name}>
                     <input
                       type="checkbox"
@@ -154,24 +154,40 @@ export default function CreateVideoGame() {
                     <label name={gen}>{gen.name}</label>
                   </div>
                 ))}
+                <div>
+                  {genres2.map((gen) => (
+                    <div key={gen.name}>
+                      <input
+                        type="checkbox"
+                        name="genres"
+                        value={gen.name}
+                      ></input>
+                      <label name={gen}>{gen.name}</label>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="platforms-create">
-              <label>-Platforms-</label>
-              <div>
-                {randomPlatforms.map((P) => (
-                  <div key={P}>
-                    <input type="checkbox" name="platforms" value={P}></input>
-                    <label name={P}>{P}</label>
-                  </div>
-                ))}
+              <div className="platforms-create">
+                <label>-Platforms-</label>
+                <div>
+                  {randomPlatforms.map((P) => (
+                    <div key={P}>
+                      <input type="checkbox" name="platforms" value={P}></input>
+                      <label name={P}>{P}</label>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            
-            <button type="submit" className="button-create">CREATE</button>
-          </form>
+
+              <button type="submit" className="button-create">
+                CREATE
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
+      ) : (
+        <Loading />
+      )}
     </>
   );
 }
