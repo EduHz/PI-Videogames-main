@@ -1,7 +1,9 @@
 ## Videogames - Individual Proyect
 
-This individual project is part of the final stage of my studies at the Henry Academy. In my case, the project I had to carry out was a video game website. On this page you can filter the video games, create new video games, and see the details of each one of them.
-The technologies that I use for this project are : Javascript, React, React-Redux, React-Router, Postgresql, Express, Sequlize, Morgan and CSS(without frameworks)
+This individual project is part of the final stage of my studies at the Henry Academy. 
+In my case, the project I had to carry out was a video game website. On this page you can filter the video games, create new video games, and see the details of each one of them.
+The technologies that I use for this project are : 
+Javascript, React, React-Redux, React-Router, Postgresql, Express, Sequlize, Morgan and CSS(without frameworks)
 
 In the home page, you have the cards with a genres and rating of games
 ![Home](https://github.com/EduHz/PI-Videogames-main/blob/main/readme%20images/1.png?raw=true)
