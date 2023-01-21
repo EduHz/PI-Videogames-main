@@ -1,4 +1,4 @@
-## Videogames Individual Proyect
+## Videogames - Individual Proyect
 
 In this project I learned how to use an external API
 
@@ -6,7 +6,7 @@ In this project I learned how to use an external API
 
 You can search the image you want
 
-![Use of SearchBar](https://github.com/EduHz/Image-Finder/blob/main/readme%20images/image%202.png?raw=true)
+![Use of SearchBar](https://github.com/EduHz/PI-Videogames-main/blob/main/readme%20images/2.png?raw=true)
 
 When i did the page, i learned, and css
 
