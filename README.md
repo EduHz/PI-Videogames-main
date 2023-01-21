@@ -18,15 +18,25 @@ The technologies that I use for this project are:
 
 
 In the home page, you have the cards with a genres and rating of games
+
 ![Home](https://github.com/EduHz/PI-Videogames-main/blob/main/readme%20images/1.png?raw=true)
+
 You have many filters for games
+
 ![SearchBar](https://github.com/EduHz/PI-Videogames-main/blob/main/readme%20images/3.png?raw=true)
+
 Also, you can filter for name
+
 ![Filter](https://github.com/EduHz/PI-Videogames-main/blob/main/readme%20images/2.png?raw=true)
+
 You can create your own video game
+
 ![Create](https://github.com/EduHz/PI-Videogames-main/blob/main/readme%20images/4.png?raw=true)
+
 and can click on each card to get the detail
+
 ![Create](https://github.com/EduHz/PI-Videogames-main/blob/main/readme%20images/5.png?raw=true)
+
 Download the repository and then run in the terminal `npm install`, for the dependencies, and `npm start`, to view the page locally,
 
-Enjoy it!
+Enjoy it! :fa-star:
