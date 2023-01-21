@@ -39,4 +39,4 @@ and can click on each card to get the detail
 
 Download the repository and then run in the terminal `npm install`, for the dependencies, and `npm start`, to view the page locally,
 
-Enjoy it! :fa-star:
+Enjoy it! 🙂
