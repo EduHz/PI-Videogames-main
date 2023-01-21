@@ -4,14 +4,14 @@ This project is part of the final stage of my studies at the Henry Academy. In m
 
 Here I use all the technologies learned:
 
--Javascript
--React
--React-Redux
--React-Router
--Postgresql
--Express
--Sequalize
--Morgan
+Javascript
+React
+React-Redux
+React-Router
+Postgresql
+Express
+Sequalize
+Morgan
 
 ![Home](https://github.com/EduHz/PI-Videogames-main/blob/main/readme%20images/1.png?raw=true)
 ![SearchBar](https://github.com/EduHz/PI-Videogames-main/blob/main/readme%20images/3.png?raw=true)
