@@ -1,0 +1,21 @@
+.ul-about {
+    background-color: transparent;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-h4 {
+    width: 50%;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    float: left;
+}
