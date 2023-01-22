@@ -11,7 +11,7 @@ export default function About() {
           This project is part of the final stage of my studies at the Henry
           Academy. In my case, the project I had to carry out was a video game
           website. On this page you can filter the video games, create new video
-          games, and see the details of each one of them <br /> Here I use all
+          games, and see the details of each one of them. <br /> Here I use all
           the technologies learned:
         </h4>
         <div className="list-about">
