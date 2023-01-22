@@ -35,19 +35,18 @@ export default function About() {
       </div>
       <div className="contact-container">
         <h5>Contact to me</h5>
-        <a href="https://www.linkedin.com/in/edu-hz/" target="_blank">
-          <img src="https://img.icons8.com/glyph-neue/50/null/linkedin-circled.png" />
+        <a href="https://www.linkedin.com/in/edu-hz/" target="_blank" rel="noreferrer">
+          <img src="https://img.icons8.com/glyph-neue/50/null/linkedin-circled.png" alt="linkedin-icon"/>
         </a>
-        <a href="https://wa.me/541123989941" target="_blank">
-          <img src="https://img.icons8.com/ios-filled/45/null/whatsapp--v1.png" />
+        <a href="https://wa.me/541123989941" target="_blank" rel="noreferrer">
+          <img src="https://img.icons8.com/ios-filled/45/null/whatsapp--v1.png" alt="whatsapp-icon"/>
         </a>
-        <a href="https://github.com/EduHz">
-          <img src="https://img.icons8.com/sf-black-filled/60/null/github.png" />
+        <a href="https://github.com/EduHz" target={"_blank"} rel="noreferrer">
+          <img src="https://img.icons8.com/sf-black-filled/60/null/github.png" alt="github-icon"/>
         </a>
       </div>
     </>
   );
 }
 
-// -Javascript -React -React-redux -React-router -Postgresql -Express
-//         -Sequalize -Morgan
+
