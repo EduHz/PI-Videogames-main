@@ -1,12 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 
 export default function LandingPage() {
-  const [coin, setCoin] = useState(0);
-
-  console.log(coin);
-
   return (
     <div className="mylandingpage">
       <div className="container-landing">
@@ -16,7 +11,7 @@ export default function LandingPage() {
           games and create your owm. Enjoy it
           <span>&#160;</span>
         </h4>
-        <Link to="/home" style={{ textDecoration: 'none' }}>
+        <Link to="/home" style={{ textDecoration: "none" }}>
           <h4 className="parpadea">PRESS START</h4>
         </Link>
       </div>

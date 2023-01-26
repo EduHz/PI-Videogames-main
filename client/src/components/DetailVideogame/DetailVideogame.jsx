@@ -15,7 +15,7 @@ export default function DetailVideogame(props) {
     return () => {
       dispatch(detailClear());
     };
-  }, [dispatch]);
+  }, [dispatch, idPage]);
 
   return (
     <>
