@@ -9,19 +9,17 @@ export default function LandingPage() {
 
   return (
     <div className="mylandingpage">
-      <h1 className="landing-h1">Welcome!</h1>
-      <button className="coin" onClick={() => setCoin(coin + 1)}>
-        Coin
-      </button>
-      <h3 className="credits">Credits : {coin}</h3>
-     
-      {coin >= 1 ? (
-        <Link to="/home">
-          <h3 className="box">START</h3>
+      <div className="container-landing">
+        <h1 className="h1-landing">VideoGames</h1>
+        <h4 className="h4-landing">
+          Welcome to my Henry Academy solo project. You can search for video
+          games and create your owm. Enjoy it
+          <span>&#160;</span>
+        </h4>
+        <Link to="/home" style={{ textDecoration: 'none' }}>
+          <h4 className="parpadea">PRESS START</h4>
         </Link>
-      ) : (
-        <h4 className="h4-coin">Please insert a coin!</h4>
-      )}
+      </div>
     </div>
   );
 }
