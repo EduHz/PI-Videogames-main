@@ -64,8 +64,8 @@ export function createVideogame(obj) {
 }
 
 export function detailClear() {
-  return dispatch => 
-   dispatch({
-    type: 'DETAIL_CLEAR',
-   })
+  return (dispatch) =>
+    dispatch({
+      type: "DETAIL_CLEAR",
+    });
 }
