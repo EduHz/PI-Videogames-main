@@ -11,8 +11,8 @@ export default function About() {
           This project is part of the final stage of my studies at the Henry
           Academy. In my case, the project I had to carry out was a video game
           website. On this page you can filter the video games, create new video
-          games, and see the details of each one of them. <br /> Here I use all
-          the technologies learned:
+          games, and see the details of each one of them. <br /> Technologies
+          that I use
         </h4>
         <div className="list-about">
           <li>Javascript</li>
@@ -35,18 +35,29 @@ export default function About() {
       </div>
       <div className="contact-container">
         <h5>Contact to me</h5>
-        <a href="https://www.linkedin.com/in/edu-hz/" target="_blank" rel="noreferrer">
-          <img src="https://img.icons8.com/glyph-neue/50/null/linkedin-circled.png" alt="linkedin-icon"/>
+        <a
+          href="https://www.linkedin.com/in/edu-hz/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="https://img.icons8.com/glyph-neue/50/null/linkedin-circled.png"
+            alt="linkedin-icon"
+          />
         </a>
         <a href="https://wa.me/541123989941" target="_blank" rel="noreferrer">
-          <img src="https://img.icons8.com/ios-filled/45/null/whatsapp--v1.png" alt="whatsapp-icon"/>
+          <img
+            src="https://img.icons8.com/ios-filled/45/null/whatsapp--v1.png"
+            alt="whatsapp-icon"
+          />
         </a>
         <a href="https://github.com/EduHz" target={"_blank"} rel="noreferrer">
-          <img src="https://img.icons8.com/sf-black-filled/60/null/github.png" alt="github-icon"/>
+          <img
+            src="https://img.icons8.com/sf-black-filled/60/null/github.png"
+            alt="github-icon"
+          />
         </a>
       </div>
     </>
   );
 }
-
-
