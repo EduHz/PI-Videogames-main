@@ -27,3 +27,5 @@ conn.sync({ force: false }).then(() => {
     console.log('%s listening at', process.env.PGPORT); // eslint-disable-line no-console
   });
 });
+
+server.keepAliveTimeout = 61 * 1000;
