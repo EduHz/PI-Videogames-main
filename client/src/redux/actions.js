@@ -1,6 +1,6 @@
 export function getVideogames() {
   return function (dispatch) {
-    return fetch(`https://videogames.up.railway.app//videogames`)
+    return fetch(`https://videogames.up.railway.app/videogames`)
       .then((response) => response.json())
       .then((json) => {
         dispatch({ type: "GET_VIDEOGAMES", payload: json });
@@ -22,7 +22,7 @@ export function searchVideogames(name) {
 
 export function getVideogameById(id) {
   return (dispatch) =>
-    fetch(`https://videogames.up.railway.app//videogame/${id}`)
+    fetch(`https://videogames.up.railway.app/videogame/${id}`)
       .then((resp) => resp.json())
       .then((json) => {
         dispatch({
@@ -34,7 +34,7 @@ export function getVideogameById(id) {
 
 export function getGenres() {
   return (dispatch) =>
-    fetch(`https://videogames.up.railway.app//genres`)
+    fetch(`https://videogames.up.railway.app/genres`)
       .then((resp) => resp.json())
       .then((json) => {
         dispatch({
@@ -46,7 +46,7 @@ export function getGenres() {
 
 export function createVideogame(obj) {
   return (dispatch) =>
-    fetch("https://videogames.up.railway.app//videogame", {
+    fetch("https://videogames.up.railway.app/videogame", {
       method: "POST",
       headers: {
         Accept: "application/json",
