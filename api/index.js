@@ -26,6 +26,6 @@ conn.sync({ force: false }).then(() => {
   server.listen(
     process.env.PORT,
     "0.0.0.0" // eslint-disable-line no-console
+    ,console.log("escuchando")
   );
 });
-s
