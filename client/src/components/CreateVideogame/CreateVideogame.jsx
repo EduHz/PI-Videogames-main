@@ -64,8 +64,12 @@ export default function CreateVideoGame() {
       platforms: game.platforms,
     };
 
+    function hasWhiteSpace(s) {
+      return !/^\s+$/.test(s);
+    }
+
     // Validaciones
-    if (!obj.name || obj.name == "") {
+    if (!obj.name || hasWhiteSpace(obj.name) === false) {
       alert("Please, enter a name");
       return;
     }
