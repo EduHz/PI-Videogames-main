@@ -69,10 +69,15 @@ export default function CreateVideoGame() {
     }
 
     // Validaciones
-    if (!obj.name || hasWhiteSpace(obj.name) === false) {
+    if (!obj.name) {
       alert("Please, enter a name");
       return;
     }
+    if (hasWhiteSpace(obj.name) === false) {
+      alert("Please, enter a valid name");
+      return;
+    }
+
     if (!obj.description) {
       alert("Please, enter a description");
       return;
