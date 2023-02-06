@@ -65,7 +65,7 @@ export default function CreateVideoGame() {
     };
 
     // Validaciones
-    if (!obj.name) {
+    if (!obj.name || obj.name == "") {
       alert("Please, enter a name");
       return;
     }
@@ -86,8 +86,6 @@ export default function CreateVideoGame() {
       return;
     }
 
-
-    
     dispatch(createVideogame(obj));
     e.target.reset();
     alert("Video game created successfully!");
@@ -119,11 +117,18 @@ export default function CreateVideoGame() {
           >
             <label>-Name-</label>
             <input type="text" name="name" value={game.name}></input>
-            
+
             <label>-Released-</label>
-            <input type="date" name="released" value={game.released}></input><br />
+            <input type="date" name="released" value={game.released}></input>
+            <br />
             <label>-Rating-</label>
-            <input type="number" name="rating" value={game.rating} min="0" max="5"></input>
+            <input
+              type="number"
+              name="rating"
+              value={game.rating}
+              min="0"
+              max="5"
+            ></input>
             <label>-Image URL-</label>
             <input type="text" name="image" value={game.image}></input>
             <div className="description-create">
@@ -134,7 +139,7 @@ export default function CreateVideoGame() {
                 name="description"
                 value={game.description}
               ></input>
-            </div >
+            </div>
             <div className="platforms-genres">
               <label>-Genres-</label>
               {genres1.map((gen) => (
@@ -167,8 +172,10 @@ export default function CreateVideoGame() {
                 ))}
               </div>
             </div>
-            
-            <button type="submit" className="button-create">CREATE</button>
+
+            <button type="submit" className="button-create">
+              CREATE
+            </button>
           </form>
         </div>
       </div>
