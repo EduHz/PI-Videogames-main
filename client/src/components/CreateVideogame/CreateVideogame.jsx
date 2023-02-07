@@ -77,7 +77,6 @@ export default function CreateVideoGame() {
       alert("Please, enter a valid name");
       return;
     }
-
     if (!obj.description) {
       alert("Please, enter a description");
       return;
