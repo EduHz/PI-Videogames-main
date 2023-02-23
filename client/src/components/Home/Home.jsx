@@ -28,7 +28,7 @@ export default function Home() {
   const result = () =>
     estadoGames.filter(function (res) {
       if (filter === "created") {
-        return res.id.length > 0 
+        return res.id.length > 0;
       } else if (filter === "existing") {
         return res.id >= 0;
       } else if (filter === "rating") {
