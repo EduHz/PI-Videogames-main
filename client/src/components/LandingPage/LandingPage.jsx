@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import React from "react";
 import "./LandingPage.css";
 
-export default function LandingPage() {
+function LandingPage() {
   return (
+    <>
     <div className="mylandingpage">
       <div className="container-landing">
         <h1 className="h1-landing">VideoGames</h1>
@@ -16,14 +18,9 @@ export default function LandingPage() {
         </Link>
       </div>
     </div>
+    </>
   );
 }
 
-//Insert coint, for start
+export default LandingPage;
 
-// <div className="landing">
-//   <h1>Soy la landing page</h1>
-//   <Link to="/home">
-//     <button>START PLAYER ONE</button>
-//   </Link>
-// </div>
