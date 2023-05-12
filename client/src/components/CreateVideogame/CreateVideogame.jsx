@@ -1,9 +1,9 @@
-import Nav from "../Nav/Nav";
-import "./CreateVideogame.css";
-import logo from "../../assets/subzero.png";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { createVideogame, getGenres } from "../../redux/actions";
+import Nav from "../Nav/Nav";
+import "./CreateVideogame.css";
+import logo from "../../assets/subzero.png";
 
 export default function CreateVideoGame() {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ export default function CreateVideoGame() {
 
   useEffect(() => {
     dispatch(getGenres());
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   const randomPlatforms = [
     "PC",

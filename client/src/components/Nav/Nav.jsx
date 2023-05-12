@@ -1,9 +1,9 @@
-import "./Nav.css";
+import React from "react";
 import { Link } from "react-router-dom";
 import audio from "../../assets/gta-sa-menu.mp3";
 
 export default function Nav() {
-  let playAudio = () => {
+  const playAudio = () => {
     new Audio(audio).play();
   };
 
@@ -24,7 +24,6 @@ export default function Nav() {
           ABOUT
         </Link>
       </li>
-
     </ul>
   );
 }
