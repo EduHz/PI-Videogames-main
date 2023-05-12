@@ -9,11 +9,11 @@ import { Route, Switch } from "react-router-dom";
 function App() {
   return (
     <Switch>
-      <Route exact path="/" component={LandingPage} />
-      <Route exact path="/home" component={Home} />
-      <Route exact path="/create" component={CreateVideogame} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/detail/:id" component={DetailVideogame} />
+      <Route path="/" component={LandingPage} />
+      <Route path="/home" component={Home} />
+      <Route path="/create" component={CreateVideogame} />
+      <Route path="/about" component={About} />
+      <Route path="/detail/:id" component={DetailVideogame} />
       <Route component={NotFound} />
     </Switch>
   );
